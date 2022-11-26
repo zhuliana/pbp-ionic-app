@@ -3,18 +3,43 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: 'message/:id',
-    loadChildren: () => import('./view-message/view-message.module').then( m => m.ViewMessagePageModule)
-  },
-  {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'gedung',
+    loadChildren: () => import('./pages/gedung/gedung.module').then( m => m.GedungPageModule)
+  },
+  {
+    path: 'ruangan',
+    loadChildren: () => import('./pages/ruangan/ruangan.module').then( m => m.RuanganPageModule)
+  },  {
+    path: 'add-gedung',
+    loadChildren: () => import('./pages/add-gedung/add-gedung.module').then( m => m.AddGedungPageModule)
+  },
+  {
+    path: 'edit-gedung',
+    loadChildren: () => import('./pages/edit-gedung/edit-gedung.module').then( m => m.EditGedungPageModule)
+  },
+  {
+    path: 'add-ruangan',
+    loadChildren: () => import('./pages/add-ruangan/add-ruangan.module').then( m => m.AddRuanganPageModule)
+  },
+  {
+    path: 'edit-ruangan',
+    loadChildren: () => import('./pages/edit-ruangan/edit-ruangan.module').then( m => m.EditRuanganPageModule)
+  },
+
+
 ];
 
 @NgModule({
