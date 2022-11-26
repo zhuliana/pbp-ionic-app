@@ -1,9 +1,28 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>gedung</ion-title>
+    <ion-title>Gedung</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="ion-padding">
+  <ion-fab  slot="fixed" vertical="bottom" horizontal="end" >
+    <ion-fab-button [routerLink]="['/add-gedung']" routerLinkActive="router-link-active">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>A</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Informatika
+      </ion-card-content>
+      <div class="container-button">
+      <ion-button fill="clear" color="primary">Edit</ion-button>
+      <ion-button fill="clear"color="danger">Delete</ion-button>
+      </div>
+    </ion-card>
+  </div>
 </ion-content>
