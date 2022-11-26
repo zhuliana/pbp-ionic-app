@@ -1,0 +1,8 @@
+{
+  "name": "PBP-Ionic-App",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "e10d2dc1"
+}
