@@ -6,19 +6,17 @@
   <div class="flex-center">
     <ion-card style="width: 90%">
       <ion-card-content>
-        <ion-item fill="solid">
-            <ion-label position="stacked">Email</ion-label>
+        <ion-item fill="outline">
+            <ion-label position="floating">Email</ion-label>
             <ion-input type="email" ngModel email></ion-input>
-            <ion-note slot="helper">Enter a valid email</ion-note>
-            <ion-note slot="error">Invalid email</ion-note>
         </ion-item>
-        <ion-item fill="solid">
-            <ion-label position="stacked">Password</ion-label>
+        <ion-item fill="outline">
+            <ion-label position="floating">Password</ion-label>
             <ion-input type="password"></ion-input>
         </ion-item>
         <ion-button size="small" fill="clear" color="dark" >Forgot Password?</ion-button>
         <ion-button expand="block" [routerLink]="['/gedung']" routerLinkActive="router-link-active">Login</ion-button>
-        <ion-button expand="block" fill="clear" [routerLink]="['/register']" routerLinkActive="router-link-active">Register</ion-button>
+        <ion-button expand="full" fill="clear" [routerLink]="['/register']" routerLinkActive="router-link-active">Register</ion-button>
       </ion-card-content>
   </ion-card>
   </div>

@@ -1,9 +1,22 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>edit-gedung</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar >
+    <ion-title>Edit Gedung</ion-title>
+    <ion-icon name="close" slot="end" size="larger" class="ion-padding" (click)="dismiss()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card class="ion-align-self-center">
+    <ion-item>
+      <ion-label position="floating">Nama Gedung</ion-label>
+      <ion-input [(ngModel)]="namaG" type="text">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Prodi</ion-label>
+      <ion-input [(ngModel)]="prodiG" type="text">
+      </ion-input>
+    </ion-item>
+    <ion-button class="ion-margin" expand="block" (click)="edit()">Save</ion-button>
+  </ion-card>
 </ion-content>

@@ -22,7 +22,8 @@ const routes: Routes = [
   {
     path: 'ruangan',
     loadChildren: () => import('./pages/ruangan/ruangan.module').then( m => m.RuanganPageModule)
-  },  {
+  },
+  {
     path: 'add-gedung',
     loadChildren: () => import('./pages/add-gedung/add-gedung.module').then( m => m.AddGedungPageModule)
   },
@@ -33,13 +34,7 @@ const routes: Routes = [
   {
     path: 'add-ruangan',
     loadChildren: () => import('./pages/add-ruangan/add-ruangan.module').then( m => m.AddRuanganPageModule)
-  },
-  {
-    path: 'edit-ruangan',
-    loadChildren: () => import('./pages/edit-ruangan/edit-ruangan.module').then( m => m.EditRuanganPageModule)
-  },
-
-
+  }
 ];
 
 @NgModule({
