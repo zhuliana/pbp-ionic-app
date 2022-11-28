@@ -12,11 +12,11 @@
   </ion-fab>
   <div>
     <ion-card *ngFor="let item of gedungs; let i = index">
-      <ion-card-header>
+      <ion-card-header [routerLink]="'/ruangan/' + item.key">
         <ion-card-title>{{item.value.namaGedung}}</ion-card-title>
       </ion-card-header>
     
-      <ion-card-content>
+      <ion-card-content [routerLink]="'/ruangan/' + item.key">
         {{item.value.prodi}}
       </ion-card-content>
 

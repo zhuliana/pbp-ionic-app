@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/gedung/gedung.module').then( m => m.GedungPageModule)
   },
   {
-    path: 'ruangan',
+    path: 'ruangan/:id',
     loadChildren: () => import('./pages/ruangan/ruangan.module').then( m => m.RuanganPageModule)
   },
   {
@@ -32,7 +32,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/edit-gedung/edit-gedung.module').then( m => m.EditGedungPageModule)
   },
   {
-    path: 'add-ruangan',
+    path: 'add-ruangan/:id',
     loadChildren: () => import('./pages/add-ruangan/add-ruangan.module').then( m => m.AddRuanganPageModule)
   }
 ];

@@ -14,30 +14,50 @@ export class StorageService {
     this.storage.set(key, value)
   }
 
-  addRuangan(key: string, value: any) {
-    this.storage.set(key, value)
+  async addRuangan(key: string, value: any) {
+    await this.storage.set(key, value)
   }
 
-  editGedung(key: string, newValue: any) {
-    this.storage.set(key, newValue)
+  async editGedung(key: string, newValue: any) {
+    await this.storage.set(key, newValue)
     this.getAllgedung()
   }
 
-  deleteGedung(key: string) {
-    this.storage.remove(key)
+  async deleteGedung(key: string) {
+    await this.storage.remove(key)
   }
 
-  deleteRuangan() {
-    this.storage.clear()
+  async deleteRuangan(key: string) {
+    await this.storage.remove(key)
   }
 
   getAllgedung() {
     let gedungs: any = []  
     this.storage.forEach((key, value, index) => {
-      gedungs.push({'key':value, 'value':key})
+      if(key.namaGedung != null) {
+        gedungs.push({'key':value, 'value':key})
+      }
     });
     return gedungs
-  }  
+  }
+
+  getGedungById(key: string) {
+    let gedungs: any = []
+    this.storage.get(key).then((val) => {
+      gedungs.push({'key':val, 'value':key})
+    });
+    return gedungs
+  }
+  
+  getAllruangan(id: string) {
+    let ruangans: any = []
+    this.storage.forEach((key, value, index) => {
+      if(key.idGedung != null && key.idGedung == id) {
+        ruangans.push({'key':value, 'value':key})
+      }
+    });
+    return ruangans
+  }
 
   async init(){
     await this.storage.create()

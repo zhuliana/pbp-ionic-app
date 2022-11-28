@@ -6,21 +6,21 @@
 
 <ion-content class="ion-padding">
   <ion-fab  slot="fixed" vertical="bottom" horizontal="end" >
-    <ion-fab-button [routerLink]="['/add-ruangan']" routerLinkActive="router-link-active">
+    <ion-fab-button [routerLink]="'/add-ruangan/' + id" routerLinkActive="router-link-active">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
   <div>
-    <ion-list>
+    <ion-list *ngFor="let item of ruangans; let i = index" >
       <ion-item-sliding>
         <ion-item>
           <ion-label>
-            <h2>A-101</h2>
-            <p>50</p>
+            <h2>{{item.value.namaRuang}}</h2>
+            <p>{{item.value.kapasitas}}</p>
           </ion-label>
         </ion-item>
         <ion-item-options side="end">
-          <ion-item-option color="danger">
+          <ion-item-option color="danger" (click)="delete(item.key)">
             <ion-icon name="trash" slot="icon-only"></ion-icon>
           </ion-item-option>
         </ion-item-options>
