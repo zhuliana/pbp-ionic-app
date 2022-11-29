@@ -35,7 +35,4 @@ export class EditGedungPage implements OnInit {
 
     this.dismiss()
   }
-
-
-
 }

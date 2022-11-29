@@ -28,13 +28,11 @@ export class EditRuanganPage implements OnInit {
   }
 
   async edit() {
-    this.newRuangan = ({namaRuang: this.namaR, kapasitas: this.kapasitasR})
+    this.newRuangan = ({namaRuang: this.namaR, kapasitas: this.kapasitasR, idGedung: this.ruangan.value.idGedung})
     console.log(this.newRuangan);
     let uid = this.ruangan.key
     await this.strgService.editRuangan(uid, this.newRuangan) 
 
     this.dismiss()
   }
-  
-
 }
