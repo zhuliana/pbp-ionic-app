@@ -14,13 +14,18 @@ export class StorageService {
     this.storage.set(key, value)
   }
 
-  async addRuangan(key: string, value: any) {
-    await this.storage.set(key, value)
+  addRuangan(key: string, value: any) {
+    this.storage.set(key, value)
   }
 
   async editGedung(key: string, newValue: any) {
     await this.storage.set(key, newValue)
     this.getAllgedung()
+  }
+
+  async editRuangan(key: string, newValue: any) {
+    await this.storage.set(key, newValue)
+    // this.getAllRuangan()
   }
 
   async deleteGedung(key: string) {
@@ -39,6 +44,16 @@ export class StorageService {
       }
     });
     return gedungs
+  }
+
+  getAllRuangan() {
+    let ruangans: any = []
+    this.storage.forEach((key, value, index) => {
+      if(key.namaRuang != null) {
+        ruangans.push({'key':value, 'value':key})
+      }
+    });
+    return ruangans
   }
 
   getGedungById(key: string) {

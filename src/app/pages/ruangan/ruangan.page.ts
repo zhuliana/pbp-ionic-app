@@ -19,8 +19,12 @@ export class RuanganPage implements OnInit{
   
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.paramMap.get('id') as string;
-    this.getAllRuangan()
+    // this.getAllRuangan()
     // console.log(this.id);
+  }
+
+  ionViewWillEnter() {
+    this.getAllRuangan()
   }
 
   async addNewRuangan() {
@@ -43,6 +47,20 @@ export class RuanganPage implements OnInit{
   getAllRuangan() {
     this.ruangans = this.strgService.getAllruangan(this.id)
     console.log(this.id);
+  }
+  
+  // update ruangan
+  async updateRuangan(selectedRuangan: any) {
+    const modal = await this.modalCtlr.create({
+      component: AddRuanganPage,
+      componentProps: {ruangan: selectedRuangan}
+    })
+
+    modal.onDidDismiss().then(() => {
+      this.getAllRuangan()
+    })
+
+    return await modal.present()
   }
 
 }
