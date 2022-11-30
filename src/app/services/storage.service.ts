@@ -18,8 +18,8 @@ export class StorageService {
     this.storage.set(key, value)
   }
 
-  async editGedung(key: string, newValue: any) {
-    await this.storage.set(key, newValue)
+  async editGedung(Key: string, newValue: any) {
+    await this.storage.set(Key, newValue)
     this.getAllgedung()
   }
 

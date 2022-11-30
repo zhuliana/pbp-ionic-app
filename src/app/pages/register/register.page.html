@@ -8,19 +8,41 @@
       <ion-card-content>
         <ion-item fill="outline">
           <ion-label position="floating">Name</ion-label>
-          <ion-input type="password"></ion-input>
+          <ion-input [(ngModel)]="nama" type="text" required></ion-input>
+        </ion-item>
+        <ion-item fill="outline">
+          <ion-label position="floating">NIM</ion-label>
+          <ion-input [(ngModel)]="nim" type="text" required></ion-input>
         </ion-item>
         <ion-item fill="outline">
             <ion-label position="floating">Email</ion-label>
-            <ion-input type="email" ngModel email></ion-input>
+            <ion-input [(ngModel)]="email" type="email" ngModel email required></ion-input>
         </ion-item>
         <ion-item fill="outline">
-            <ion-label position="floating">Password</ion-label>
-            <ion-input type="password"></ion-input>
+            <ion-label position="floating">Prodi</ion-label>
+            <ion-input [(ngModel)]="prodi" type="text" required></ion-input>
         </ion-item>
         <ion-button expand="block"[routerLink]="['/gedung']" routerLinkActive="router-link-active">Register</ion-button>
-        <ion-button expand="full" fill="clear" [routerLink]="['/login']" routerLinkActive="router-link-active">Login</ion-button>
+        <ion-button id="open-modal" expand="full" fill="clear" (click)="setOpen(true)">Tampilkan</ion-button>
       </ion-card-content>
   </ion-card>
   </div>
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Data</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>{{nama}}</p>
+        <p>{{nim}}</p>
+        <p>{{email}}</p>  
+        <p>{{prodi}}</p>  
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>

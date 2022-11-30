@@ -3,7 +3,6 @@ import { ModalController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StorageService } from 'src/app/services/storage.service';
 import { AddRuanganPage } from '../add-ruangan/add-ruangan.page';
-import { EditRuanganPage } from '../edit-ruangan/edit-ruangan.page';
 
 @Component({
   selector: 'app-ruangan',
@@ -50,18 +49,5 @@ export class RuanganPage implements OnInit{
     console.log(this.id);
   }
   
-  // update ruangan
-  async updateRuangan(selectedRuangan: any) {
-    const modal = await this.modalCtlr.create({
-      component: EditRuanganPage,
-      componentProps: {ruangan: selectedRuangan}
-    })
-
-    modal.onDidDismiss().then(() => {
-      this.getAllRuangan()
-    })
-
-    return await modal.present()
-  }
 
 }

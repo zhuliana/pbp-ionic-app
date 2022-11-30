@@ -4,12 +4,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'register',
     pathMatch: 'full'
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'register',
@@ -34,10 +30,8 @@ const routes: Routes = [
   {
     path: 'add-ruangan/:id',
     loadChildren: () => import('./pages/add-ruangan/add-ruangan.module').then( m => m.AddRuanganPageModule)
-  },  {
-    path: 'edit-ruangan',
-    loadChildren: () => import('./pages/edit-ruangan/edit-ruangan.module').then( m => m.EditRuanganPageModule)
   }
+
 
 ];
 
